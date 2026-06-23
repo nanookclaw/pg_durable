@@ -235,7 +235,7 @@ sequenceDiagram
     participant B as Body subgraph
     Note over L,B: iteration N
     L->>B: reset body subgraph → pending (clear result/reason)
-    B->>B: run body; RACE/IF reconcile losers/untaken → terminal (this iteration)
+    B->>B: run body, RACE/IF reconcile losers/untaken → terminal (this iteration)
     L->>L: evaluate condition
     alt continue
         L->>L: continue_as_new (iteration N+1)
